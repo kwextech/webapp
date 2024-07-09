@@ -23,7 +23,7 @@
             </div>
             <div style="color: red; display: none;" id="min">Minimum Withdrawal: $<span>{% if min %}{{min.amount}}{% else %}10{% endif %}</span></div>
             <div>Available balance: $<span id="bal">{% if balance is None %}0{% else %}{{balance}}{% endif %}</span></div>
-            <button type="submit" id="reg_submit" class="btn btn-primary w-100" style="box-shadow: none; border: none;">Request Withdrawal</button>
+            <button type="submit" id="reg_submit" class="btn bg-orange w-100" style="box-shadow: none; border: none;">Request Withdrawal</button>
         </div>
     </div>
 </form>
