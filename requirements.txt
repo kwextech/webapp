@@ -1,4 +1,3 @@
-dasgiref==3.8.1
 boto3==1.34.131
 botocore==1.34.131
 dj-database-url==2.2.0
