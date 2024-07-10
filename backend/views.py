@@ -241,17 +241,15 @@ def SubmitInvestment(request):
 
     if reinvest.exists():
         counting = Reinvestment.objects.get(user=request.user, plan=select)
-        if counting.plan == 'Standard' and counting.number_of_investment < 5 or counting.plan == 'Premium' and counting.number_of_investment <7 or counting.plan == 'Ultimate' and counting.number_of_investment < 10 or counting.plan == 'Shareholders' and counting.number_of_investment >= 0:
+        if counting.plan == 'Starter' and counting.number_of_investment <= 1 or counting.plan == 'Premium' and counting.number_of_investment <=2 or counting.plan == 'Vip' and counting.number_of_investment <=3:
             invest = Investment.objects.create(user= request.user, plan= select, amount= amount, is_active= True)
             referal =  User.objects.get(email=request.user.email)
 
             def Earn():
-                if select == 'Standard':
-                    return 1
-                elif select == 'Premium':
+                if select == 'Starter':
                     return 2
-                elif select == 'Ultimate':
-                    return 4
+                elif select == 'Premium':
+                    return 3
                 else:
                     return 5
             ReferalBonus.objects.create(user = str(referal.refered_by), earnings = Earn())
@@ -269,12 +267,10 @@ def SubmitInvestment(request):
         referal =  User.objects.get(email=request.user.email)
 
         def Earn():
-            if select == 'Standard':
-                return 1
-            elif select == 'Premium':
+            if select == 'Starter':
                 return 2
-            elif select == 'Ultimate':
-                return 4
+            elif select == 'Premium':
+                return 3
             else:
                 return 5
         ReferalBonus.objects.create(user = str(referal.refered_by), earnings = Earn())
