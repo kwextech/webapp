@@ -1,83 +1,85 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}Echelonglobe - Sign up{% endblock %}
+{% block title %}Sign up{% endblock %}
 {% block body %}
-<form method="post">
-    {% csrf_token %}
-    <div class="form-bg">
-        <div class="form px-4">
-            <p class="form-text">SIGN UP</p>
+<div class="container-fluid bg-on-surface">
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-bg">
+            <div class="form px-4">
+                <p class="form-text">SIGN UP</p>
 
-            {% if form.errors %}
-            <div class="errors" style="color: yellow; background-color: black; padding: 10px;">
-                {{form.errors}}
-            </div>
-            {% endif %}
-            {% for message in messages %}
-            <center><span style="color: yellow; background-color: black; border: none; padding: 10px;">{{message}}</span></center>
-            {% endfor %}
-
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">{{form.email.label_tag}}</label>
-                <div class="input-group mb-3">
-                    {{form.email}}
+                {% if form.errors %}
+                <div class="errors" style="color: yellow; background-color: black; padding: 10px;">
+                    {{form.errors}}
                 </div>
-            </div>
+                {% endif %}
+                {% for message in messages %}
+                <center><span style="color: yellow; background-color: black; border: none; padding: 10px;">{{message}}</span></center>
+                {% endfor %}
 
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">{{form.first_name.label_tag}}</label>
-                <div class="input-group mb-3">
-                    {{form.first_name}}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">{{form.email.label_tag}}</label>
+                    <div class="input-group mb-3">
+                        {{form.email}}
+                    </div>
                 </div>
-            </div>
 
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">{{form.last_name.label_tag}}</label>
-                <div class="input-group mb-3">
-                    {{form.last_name}}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">{{form.first_name.label_tag}}</label>
+                    <div class="input-group mb-3">
+                        {{form.first_name}}
+                    </div>
                 </div>
-            </div>
 
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">{{form.country.label_tag}}</label>
-                <div class="input-group mb-3">
-                    {{form.country}}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">{{form.last_name.label_tag}}</label>
+                    <div class="input-group mb-3">
+                        {{form.last_name}}
+                    </div>
                 </div>
-            </div>
 
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">{{form.mobile_number.label_tag}}</label>
-                <div class="input-group mb-3">
-                    {{form.mobile_number}}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">{{form.country.label_tag}}</label>
+                    <div class="input-group mb-3">
+                        {{form.country}}
+                    </div>
                 </div>
-            </div>
 
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">{{form.password1.label_tag}}</label>
-                <div class="input-group mb-3">
-                    {{form.password1}}<i id="eyes1"  class="fas fa-eye"></i>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">{{form.mobile_number.label_tag}}</label>
+                    <div class="input-group mb-3">
+                        {{form.mobile_number}}
+                    </div>
                 </div>
-            </div>
 
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">{{form.password2.label_tag}}</label>
-                <div class="input-group mb-3">
-                    {{form.password2}}<i id="eyes2" class="fas fa-eye"></i>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">{{form.password1.label_tag}}</label>
+                    <div class="input-group mb-3">
+                        {{form.password1}}<i id="eyes1"  class="fas fa-eye"></i>
+                    </div>
                 </div>
+
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">{{form.password2.label_tag}}</label>
+                    <div class="input-group mb-3">
+                        {{form.password2}}<i id="eyes2" class="fas fa-eye"></i>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="accept">
+                    <label class="form-check-label" for="accept">
+                    i agree with terms & conditions
+                    </label>
+                </div>
+
+                <button type="submit" id="reg_submit" class="btn bg-orange w-100 mt-3" disabled>Sign up</button>
+
+                <p class="mt-3 text">Have an account already? <a href="{% url 'login' %}" style="color: orange;">Sign in</a></p>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="accept">
-                <label class="form-check-label" for="accept">
-                  i agree with terms & conditions
-                </label>
-              </div>
-
-            <button type="submit" id="reg_submit" class="btn bg-orange w-100 mt-3" disabled>Sign up</button>
-
-            <p class="mt-3 text">Have an account already? <a href="{% url 'login' %}" style="color: orange;">Sign in</a></p>
         </div>
-    </div>
-</form>
+    </form>
+</div>
 
 
 <script>
