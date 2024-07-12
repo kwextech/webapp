@@ -51,7 +51,7 @@ def register(request):
                 'token': TokenGenerator.make_token(user)
             })
             email = EmailMessage(subject=email_subject, body=email_body,
-                from_email='Echelonglobe <support@echelonglobe.com>', to=[user.email]
+                from_email='Capitalpayinvest <support@capitalpayinvest.com>', to=[user.email]
                 )
             email.content_subtype = 'html'
             email.send()
@@ -82,7 +82,7 @@ def ReferalRegister(request, referal):
                 'token': TokenGenerator.make_token(user)
             })
             email = EmailMessage(subject=email_subject, body=email_body,
-                from_email='Echelonglobe <support@echelonglobe.com>', to=[user.email]
+                from_email='Capitalpayinvest <support@capitalpayinvest.com>', to=[user.email]
                 ) 
             email.content_subtype = 'html'
             email.send()
@@ -153,7 +153,7 @@ def Referal(request):
     for i in bonus:
         total += i.earnings
     arg = {'total':refer.count(), 'refer': detail.referal, 'earning':total}
-    return render(request, 'backend/referal.html', arg)
+    return render(request, 'dashboard/referal.html', arg)
 
 @login_required(login_url='/login/')  
 def history(request):

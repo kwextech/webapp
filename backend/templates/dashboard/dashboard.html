@@ -27,7 +27,7 @@
                           </span>
                         {% endif %}
                         <p class="fs-3 mb-0">System earning:</p>
-                        <p class="text-dark me-1 fs-3 mb-0">${{earning}}</p>  
+                        <p class=" me-1 fs-3 mb-0">${{earning}}</p>  
                     </div>
                     </div>
                     <div class="col-4">
@@ -127,7 +127,7 @@
             <ul class="timeline-widget mb-0 position-relative mb-n5">
               {% for item in data %}
                 <li class="timeline-item d-flex position-relative overflow-hidden">
-                  <div class="timeline-time text-dark flex-shrink-0 text-end">{{item.date_created.date}}</div>
+                  <div class="timeline-time  flex-shrink-0 text-end">{{item.date_created.date}}</div>
                   <div class="timeline-badge-wrap d-flex flex-column align-items-center">
                     {% if item.status %}
                     <span class="timeline-badge border-2 border border-success flex-shrink-0 my-8"></span>
@@ -136,7 +136,7 @@
                     {% endif %}
                     <span class="timeline-badge-border d-block flex-shrink-0"></span>
                   </div>
-                  <div class="timeline-desc fs-3 text-dark mt-n1">{{request.user.first_name}} made {{item.action}} of ${{item.amount}}</div>
+                  <div class="timeline-desc fs-3  mt-n1">{{request.user.first_name}} made {{item.action}} of ${{item.amount}}</div>
                 </li>
               {% endfor %}
             </ul>

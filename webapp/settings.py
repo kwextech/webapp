@@ -96,8 +96,8 @@ DATABASES = {
 #DATABASES = {
 #    'default': {
 #        'ENGINE': 'mysql.connector.django',
-#        'NAME': 'echelonglobe_database1',
-#        'USER': 'echelonglobe_admin',
+#        'NAME': 'capita25_database1',
+#        'USER': 'capita25_admin',
 #        'PASSWORD': '%Thankgod24%',
 #        'HOST': '127.0.0.1',
 #        'PORT': '3306'
@@ -158,12 +158,12 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST='mail.echelonglobe.com'
+EMAIL_HOST='mail.capitalpayinvest.com'
 EMAIL_PORT =587
-EMAIL_HOST_USER='support@echelonglobe.com'
+EMAIL_HOST_USER='support@capitalpayinvest.com'
 EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS =True
-DEFAULT_FROM_EMAIL ='support@echelonglobe.com'
+DEFAULT_FROM_EMAIL ='support@capitalpayinvest.com'
 
 LOGIN_REDIRECT_URL = ('/Profile-dashboard')
 LOGOUT_REDIRECT_URL = ('/')
