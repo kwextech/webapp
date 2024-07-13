@@ -241,24 +241,67 @@ class Transfer(models.Model):
         else:
             pass
         super().save(*args, **kwargs)
-    
+
+
+class Loan(models.Model):
+    choice = (
+        ('three_months', '3 months'),
+        ('six_months', '6 months'),
+        ('one_year', '1 year'),
+    )
+    user  = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    amount = models.IntegerField(default='', blank=True, null=True)
+    interest = models.IntegerField(default='', blank=True, null=True)
+    status = models.BooleanField(default=False)
+    duration = models.CharField(max_length=20, choices=choice)
+    date_generated = models.DateTimeField(default=timezone.now)
+    expiration = models.DateTimeField(default=timezone.now)
+
+
+
+
+    def save(self, *arg, **kwargs):
+        if self.duration == 'three_months':
+            self.interest = (5*self.amount)/100
+            self.expiration = self.date_generated + timezone.timedelta(days=91)
+        elif self.duration == 'six_months':
+            self.interest = (10*self.amount)/100
+            self.expiration = self.date_generated + timezone.timedelta(days=183)
+        else:
+            self.interest = (15*self.amount)/100
+            self.expiration = self.date_generated + timezone.timedelta(days=365)
+
+        if self.status == True:
+            user = User.objects.get(email=self.user.email)
+            user.balance += self.amount
+            user.save()
+        else:
+            pass
+        super().save(*arg, **kwargs)
+
+    def __str__(self):
+        return f"user:{self.user} amount:{self.amount}"
 class History(models.Model):
     choice  =  (
         ('Withdrawal', 'Withdrawal'),
         ('Deposit', 'Deposit'),
         ('Transfer', 'Transfer'),
         ('Investment', 'Investment'),
+        ('Loan', 'Loan'),
     )
     user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True, editable=False)
     payment = models.ForeignKey(Payment, on_delete=models.CASCADE, blank=True, null=True)
     withdraw = models.ForeignKey(Withdrawal, on_delete=models.CASCADE, blank=True, null=True)
     invest = models.ForeignKey(Investment, on_delete=models.CASCADE, blank=True, null=True)
     transfer = models.ForeignKey(Transfer, on_delete=models.CASCADE, blank=True, null=True)
+    loan = models.ForeignKey(Loan, on_delete=models.CASCADE, blank=True, null=True)
     action =  models.CharField(max_length=200, choices=choice, blank=True, null=True, editable=False)
     currency = models.CharField(max_length=20, blank=True, null=True)
+    duration = models.CharField(max_length=20, blank=True, null=True)
     amount = models.CharField(max_length=20)
     status = models.BooleanField(default=False) 
     date_created = models.DateTimeField(default=timezone.now)
+    expires = models.DateTimeField(default=timezone.now)
 
     class Meta:
         verbose_name_plural ='Histories'
@@ -364,6 +407,14 @@ class MinimumWithdraw(models.Model):
 
     def __str__(self):
         return f"Mininum withdrawal: {self.amount}"
+    
+
+
+    
+
+    
+
+
 
 
 

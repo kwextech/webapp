@@ -11,7 +11,7 @@
             <div class="text-content flex-columns-between"> 
               <div class="heading2 text-white animate__animated animate__fadeInUp animate__delay-0-2s">Gain Financial Freedom <br>Earn Passively with Capitalpayinvest</div>
               <div class="body2 mt-12 text-white animate__animated animate__fadeInUp animate__delay-0-5s">Exploring the Transformative Power of being Financially Free,<br>Empowering Change, and Paving the Path to a Sustainable Tomorrow.</div>
-              <div class="button-block mt-40 animate__animated animate__fadeInUp animate__delay-0-8s"><a class="button-share display-inline-block bg-orange border-transparent hover-text-orange text-white text-button pl-36 pr-36 pt-14 pb-14 bora-100" href="{% url 'home' %}">Get Started</a>
+              <div class="button-block mt-40 animate__animated animate__fadeInUp animate__delay-0-8s"><a class="button-share display-inline-block bg-orange border-transparent hover-text-orange text-white text-button pl-36 pr-36 pt-14 pb-14 bora-100" href="{% url 'register' %}">Get Started</a>
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@
     </div>
 
     <!--Counting section-->
-    <div class="video-about-block pt-100 bg-on-surface">
+    <div class="video-about-block pt-100 bg-on-surface pb-4">
       <div class="container"> 
         <div class="row mt-40 flex-columns-center bg-border pt-5 mb-0 pb-5 mx-2">
           <div class="col-11 col-sm-9">
@@ -50,19 +50,19 @@
                 <div class="count-block flex-item-center">
                   <div class="counter heading3 text-white">8</div><span class="heading3 text-white">k+</span>
                 </div>
-                <div class="body1 text-placehover mt-8">Happy customers</div>
+                <div class="body1 text-placehover mt-8">Client</div>
               </div>
               <div class="col-12 col-xl-4 col-lg-4 col-md-6 col-sm-6 flex-columns-center">
                 <div class="count-block flex-item-center">
                   <div class="counter heading3 text-white">14</div><span class="heading3 text-white">k+</span>
                 </div>
-                <div class="body1 text-placehover mt-8">Years experiences</div>
+                <div class="body1 text-placehover mt-8">Experience</div>
               </div>
               <div class="col-12 col-xl-4 col-lg- col-md-6 col-sm-6 flex-columns-center">
                 <div class="count-block flex-item-center">
                   <div class="counter heading3 text-white">18</div><span class="heading3 text-white">k+</span>
                 </div>
-                <div class="body1 text-placehover mt-8">Awards achievement</div>
+                <div class="body1 text-placehover mt-8">Awards</div>
               </div>
             </div>
           </div>
@@ -136,7 +136,7 @@
             <div class="col-12 col-lg-4">
               <div class="pricing-item p-32 bora-16 text-white">
                 <div class="item-infor pl-24 pr-24">
-                  <div class="heading7 text-center text-orange">Starter Plan</div>
+                  <div class="heading7 text-center text-orange">Standard Plan</div>
                   <div class="heading3 text-center mt-12">7.3%<span class="body1"></span></div>
                   <div class="body3 text-center text-line mt-12">daily interest(3days)</div>
                   <div class="list-feature mt-32 flex-column gap-12">
@@ -155,6 +155,9 @@
                     <div class="item flex-item-center gap-16"> <i class="ph-fill ph-check-circle fs-24 text-orange"></i>
                       <div class="body3">2% referal bonus</div>
                     </div>
+                    <div class="item flex-item-center gap-16"> <i class="ph-fill ph-x-circle fs-24 text-placehover"></i>
+                      <div class="body3 text-placehover">ineligible for loan</div>
+                    </div>
                   </div>
                 </div>
                 <div class="button-block w-100 mt-40"><a class="button-share text-center display-block text-white text-button w-100 pt-12 pb-12 bora-8" href="{% static 'active' %}">Invest now</a>
@@ -164,7 +167,7 @@
             <div class="col-12 col-lg-4">
               <div class="pricing-item p-32 bora-16 text-white">
                 <div class="item-infor pl-24 pr-24">
-                  <div class="heading7 text-center text-orange">Premium</div>
+                  <div class="heading7 text-center text-orange">Premium Plan</div>
                   <div class="heading3 text-center mt-12">8.3%<span class="body1"></span></div>
                   <div class="body3 text-center text-line mt-12">daily interest(5days)</div>
                   <div class="list-feature mt-32 flex-column gap-12">
@@ -183,6 +186,9 @@
                     <div class="item flex-item-center gap-16"> <i class="ph-fill ph-check-circle fs-24 text-orange"></i>
                       <div class="body3">3% referal bonus</div>
                     </div>
+                    <div class="item flex-item-center gap-16"> <i class="ph-fill ph-check-circle fs-24 text-orange"></i>
+                      <div class="body3">eligible for loan</div>
+                    </div>
                   </div>
                 </div>
                 <div class="button-block w-100 mt-40"><a class="button-share text-center display-block text-white text-button w-100 pt-12 pb-12 bora-8" href="{% static 'active' %}">Invest now</a>
@@ -192,7 +198,7 @@
             <div class="col-12 col-lg-4">
               <div class="pricing-item p-32 bora-16 text-white">
                 <div class="item-infor pl-24 pr-24">
-                  <div class="heading7 text-center text-orange">Vip</div>
+                  <div class="heading7 text-center text-orange">Ultimate Plan</div>
                   <div class="heading3 text-center mt-12">10%<span class="body1"></span></div>
                   <div class="body3 text-center text-line mt-12">daily interest(7days)</div>
                   <div class="list-feature mt-32 flex-column gap-12">
@@ -210,6 +216,9 @@
                     </div>
                     <div class="item flex-item-center gap-16"> <i class="ph-fill ph-check-circle fs-24 text-orange"></i>
                       <div class="body3">5% referal bonus</div>
+                    </div>
+                    <div class="item flex-item-center gap-16"> <i class="ph-fill ph-check-circle fs-24 text-orange"></i>
+                      <div class="body3">eligible for loan</div>
                     </div>
                   </div>
                 </div>
@@ -262,6 +271,7 @@
         </div>
       </div>
     </div>
+
     <div class="testimonials-six pt-100 bg-on-surface"> 
       <div class="container">
         <div class="heading3 text-white text-center">Our Testimonials</div>

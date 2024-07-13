@@ -274,7 +274,7 @@ def SubmitInvestment(request):
             else:
                 return 5
         ReferalBonus.objects.create(user = str(referal.refered_by), earnings = Earn())
-        bal =  User.objects.filter(user= request.user)
+        bal =  User.objects.get(email= request.user.email)
         bal.balance -= int(amount)
         bal.save()
         new.number_of_investment += 1
@@ -359,6 +359,31 @@ def notification(request):
     id =  request.POST['id']
     data = NotificationVisibility.objects.update_or_create(user = user, notification_id=int(id))
     return JsonResponse('successfully updated', safe=False)
+
+
+@login_required(login_url='/login/')
+def loan(request):
+    eligible = Investment.objects.filter(user=request.user.pk, plan = 'Premium' or 'Vip')
+    if eligible.exists():
+        if request.method == 'POST':
+            form = LoanForm(request.POST)
+            if form.is_valid():
+                data = form.save(commit=False)
+                data.user = request.user
+                data.save()
+                messages.success(request, 'Application submitted, awaiting Approval')
+                return redirect('/loan_request')
+            else:
+                messages.error(request, 'Error processing form contact support')
+        else:
+            form = LoanForm()
+        arg = {'form':form}
+        return render(request, 'dashboard/loan.html', arg)
+    else:
+        messages.info(request, 'Only Premium and Ultimate Plan users are eligible')
+        return render(request, 'dashboard/loan.html')
+
+    
 
 
 

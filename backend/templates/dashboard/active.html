@@ -48,7 +48,7 @@
     btn.addEventListener('click', (e)=>{
         e.preventDefault()
         if(parseInt(bal.innerText) >= parseInt(amount.value) || amount.value == ' ' ){
-            if (option.value === 'Standard'&& (amount.value < 1000 && amount.value > 199) ){
+            if (option.value === 'Standard'&& (amount.value < 1999 && amount.value > 59) ){
                 btn.innerText = 'Processing.......'
                 btn.disabled = true
                 $.ajax({
@@ -87,7 +87,7 @@
                     }
                 })    
             }
-            else if( option.value === 'Premium' && (amount.value < 6000 && amount.value > 999)){
+            else if( option.value === 'Premium' && (amount.value < 10000 && amount.value > 1999)){
                 btn.innerText = "Processing...."
                 btn.disabled = true
                 $.ajax({
@@ -125,36 +125,7 @@
                     }
                 })     
             }
-            else if(option.value === 'Ultimate' & (amount.value < 30999 && amount.value > 5999)){
-                btn.innerText = "Processing...."
-                btn.disabled = true
-                $.ajax({
-                    url:'/investment_processing/',
-                    type:'post',
-                    headers: { "X-CSRFToken": token },
-                    data:{
-                        amount:$('#amount').val(),
-                        select:$('#select').val(),
-                    },
-                    success:function(response){
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Investment successful',
-                        })
-                        window.location.href = `${window.location.origin}/Profile-dashboard`
-                    },
-                    error:function(){
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Oops...',
-                            text: 'Something went wrong!',
-                        })
-                        btn.innerText = "Make Investment"
-                        btn.disabled = false
-                    }
-                }) 
-            }
-            else if(option.value === 'Shareholders' & (amount.value > 30999)){
+            else if(option.value === 'Ultimate' & (amount.value > 9999)){
                 btn.innerText = "Processing...."
                 btn.disabled = true
                 $.ajax({
@@ -184,7 +155,7 @@
                 }) 
             }
             else{
-                invest.innerText = 'Minimum amount for each plan are ($200, $1000, $6000 and $40000 ) respectively'
+                invest.innerText = 'Minimum amount for each plan are ($50, $2000, $ and $10000 ) respectively'
                 invest.style.display = 'block'
                 error.style.display = 'none' 
             }  
