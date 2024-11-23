@@ -90,7 +90,7 @@ DATABASES = {
         'ENGINE': 'mysql.connector.django',
         'NAME': 'finovaed_main',
         'USER': 'finovaed_main',
-        'PASSWORD': '%Thankgod24%',
+        'PASSWORD': os.environ.get('DATABASE'),
         'HOST': 's4.whitelabelclouds.com',
         'PORT': '3306'
     }
