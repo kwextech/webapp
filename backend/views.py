@@ -51,7 +51,7 @@ def register(request):
                 'token': TokenGenerator.make_token(user)
             })
             email = EmailMessage(subject=email_subject, body=email_body,
-                from_email='Capitalpayinvest <support@capitalpayinvest.com>', to=[user.email]
+                from_email='Capitalpayinvest <info.capitalpay@zohomail.com>', to=[user.email]
                 )
             email.content_subtype = 'html'
             email.send()
@@ -82,7 +82,7 @@ def ReferalRegister(request, referal):
                 'token': TokenGenerator.make_token(user)
             })
             email = EmailMessage(subject=email_subject, body=email_body,
-                from_email='Capitalpayinvest <support@capitalpayinvest.com>', to=[user.email]
+                from_email='Capitalpayinvest <info.capitalpay@zohomail.com>', to=[user.email]
                 ) 
             email.content_subtype = 'html'
             email.send()

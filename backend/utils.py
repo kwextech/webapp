@@ -20,7 +20,7 @@ def SendReferalMail(user,referer):
 
     })
     email = EmailMessage(subject=email_subject, body=email_body,
-        from_email='Capitalpayinvest <support@capitalpayinvest.com>', to=[referer.email]
+        from_email='Capitalpayinvest <info.capitalpay@zohomail.com>', to=[referer.email]
         )
     email.content_subtype = 'html'
     email.send()
@@ -34,7 +34,7 @@ def DepositMail(user,amount,currency):
         'currency': currency
     })
     email = EmailMessage(subject=email_subject, body=email_body,
-        from_email='Capitalpayinvest <support@capitalpayinvest.com>', to=[user.email]
+        from_email='Capitalpayinvest <info.capitalpay@zohomail.com>', to=[user.email]
         )
     email.content_subtype = 'html'
     email.send()
@@ -47,7 +47,7 @@ def WithdrawalMail(user, amount):
         'amount': amount,
     })
     email = EmailMessage(subject=email_subject, body=email_body,
-        from_email='Capitalpayinvest <support@capitalpayinvest.com>', to=[user.email]
+        from_email='Capitalpayinvest <info.capitalpay@zohomail.com>', to=[user.email]
         )
     email.content_subtype = 'html'
     email.send()
@@ -62,7 +62,7 @@ def CommisionMail(user,referer, bonus):
 
     })
     email = EmailMessage(subject=email_subject, body=email_body,
-        from_email='Capitalpayinvest <support@capitalpayinvest.com>', to=[referer.email]
+        from_email='Capitalpayinvest <info.capitalpay@zohomail.com>', to=[referer.email]
         )
     email.content_subtype = 'html'
     email.send()
@@ -77,7 +77,7 @@ def TransferMail(user,referer, amount):
 
     })
     email = EmailMessage(subject=email_subject, body=email_body,
-        from_email='Capitalpayinvest <support@capitalpayinvest.com>', to=[user.email]
+        from_email='Capitalpayinvest <info.capitalpay@zohomail.com>', to=[user.email]
         )
     email.content_subtype = 'html'
     email.send()
@@ -91,7 +91,7 @@ def TransferRecieverMail(referer, amount, user):
 
     })
     email = EmailMessage(subject=email_subject, body=email_body,
-        from_email='Capitalpayinvest <support@capitalpayinvest.com>', to=[user.email]
+        from_email='Capitalpayinvest <info.capitalpay@zohomail.com>', to=[user.email]
         )
     email.content_subtype = 'html'
     email.send()
@@ -106,7 +106,7 @@ def SendEmail(subject, user, message):
     })
 
     email =  EmailMessage(subject=email_subject, body=email_body,
-        from_email='Capitalpayinvest <support@capitalpayinvest.com>', to=[user['email']]                 
+        from_email='Capitalpayinvest <info.capitalpay@zohomail.com>', to=[user['email']]                 
         )
     email.content_subtype = 'html'
     email.send()

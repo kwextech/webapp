@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{% endblock %}</title>
-  <link rel="stylesheet" href="{% static 'admin/css/styles.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'dashboard/css/styles.min.css' %}" />
   <link rel="stylesheet" href="{% static 'assets/css/custom.css' %}">
 </head>
 
@@ -173,7 +173,7 @@
               <li class="nav-item dropdown">
                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2" data-bs-toggle="dropdown"
                   aria-expanded="false">
-                  <img src="{% static 'admin/images/profile/user-1.jpg' %}" alt="" width="35" height="35" class="rounded-circle">
+                  <img src="{% static 'dashboard/images/profile/user-1.jpg' %}" alt="" width="35" height="35" class="rounded-circle">
                 </a>
                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up" aria-labelledby="drop2">
                   <div class="message-body px-3">
@@ -246,16 +246,19 @@
 
 
 
-  <script src="{% static 'admin/libs/jquery/dist/jquery.min.js' %}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://kit.fontawesome.com/82d49a62e0.js" crossorigin="anonymous"></script>
-  <script src="{% static 'admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="{% static 'admin/js/sidebarmenu.js' %}"></script>
-  <script src="{% static 'admin/js/app.min.js' %}"></script>
-  <script src="{% static 'admin/libs/apexcharts/dist/apexcharts.min.js' %}"></script>
-  <script src="{% static 'admin/libs/simplebar/dist/simplebar.js' %}"></script>
-
+  
+  
+<script src="{% static 'dashboard/libs/jquery/dist/jquery.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/82d49a62e0.js" crossorigin="anonymous"></script>
+<script src="{% static 'dashboard/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'dashboard/js/sidebarmenu.js' %}"></script>
+<script src="{% static 'dashboard/js/app.min.js' %}"></script>
+<script src="{% static 'dashboard/libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+<script src="{% static 'dashboard/libs/simplebar/dist/simplebar.js' %}"></script>
+  
   <script>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script><script id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siqc3773af12694cf7a47d30a796c533c177ed8e15d39e1a1eaf790fd65e89483ca" defer></script>
+
 </body>
 
 </html>

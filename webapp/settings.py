@@ -81,29 +81,20 @@ WSGI_APPLICATION = 'webapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+
+
+
+
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv('webapp'))
+    'default': {
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'finovaed_main',
+        'USER': 'finovaed_main',
+        'PASSWORD': '%Thankgod24%',
+        'HOST': 's4.whitelabelclouds.com',
+        'PORT': '3306'
+    }
 }
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': 'mydatabase', 
-#    }
-#}
-
-
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'mysql.connector.django',
-#        'NAME': 'capita25_database1',
-#        'USER': 'capita25_admin',
-#        'PASSWORD': '%Thankgod24%',
-#        'HOST': '127.0.0.1',
-#        'PORT': '3306'
-#    }
-#}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -158,12 +149,12 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST='mail.capitalpayinvest.com'
+EMAIL_HOST='smtp.zoho.com'
 EMAIL_PORT =587
-EMAIL_HOST_USER='support@capitalpayinvest.com'
+EMAIL_HOST_USER='info.capitalpay@zohomail.com'
 EMAIL_HOST_PASSWORD=os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS =True
-DEFAULT_FROM_EMAIL ='support@capitalpayinvest.com'
+DEFAULT_FROM_EMAIL ='info.capitalpay@zohomail.com'
 
 LOGIN_REDIRECT_URL = ('/Profile-dashboard')
 LOGOUT_REDIRECT_URL = ('/')
